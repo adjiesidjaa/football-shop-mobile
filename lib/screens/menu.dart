@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:football_news/screens/product_form.dart';
+import 'package:football_news/screens/product_list.dart';
 import 'package:football_news/widgets/left_drawer.dart';
 
 class MyHomePage extends StatelessWidget {
@@ -127,6 +128,22 @@ class ItemCard extends StatelessWidget {
               context,
               MaterialPageRoute(
                 builder: (context) => const ProductFormPage(),
+              ),
+            );
+          } else if (item.name == "All Product") {
+            // Navigasi ke halaman list produk dengan filter "all"
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => const ProductListPage(initialFilter: "all"),
+              ),
+            );
+          } else if (item.name == "My Products") {
+            // Navigasi ke halaman list produk dengan filter "mine"
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => const ProductListPage(initialFilter: "mine"),
               ),
             );
           } else {
